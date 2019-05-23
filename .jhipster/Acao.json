@@ -1,0 +1,88 @@
+{
+    "name": "Acao",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "descricao",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "meta",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "banner",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dataHoraInicio",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dataHoraFim",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "custos",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "situacaoAcao",
+            "fieldType": "SituacaoAcaoEnum",
+            "fieldValues": "PRE_ACAO,EM_ACAO,SUSPENSA,PAUSADA",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "profissaoNecessariaAcao",
+            "otherEntityRelationshipName": "acao",
+            "relationshipName": "profissaoNecessariaAcao"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "participacao",
+            "otherEntityRelationshipName": "acao",
+            "relationshipName": "participacao"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "endereco",
+            "otherEntityRelationshipName": "acao",
+            "relationshipName": "endereco"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "recursoNecessario",
+            "otherEntityRelationshipName": "acao",
+            "relationshipName": "recursoNecessario"
+        }
+    ],
+    "changelogDate": "20190508041457",
+    "entityTableName": "acao",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

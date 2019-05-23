@@ -1,0 +1,72 @@
+{
+    "name": "RecursoNecessario",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "descricao",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "quantidade",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "isFinanceiro",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "valor",
+            "fieldType": "Double",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "doacao",
+            "otherEntityRelationshipName": "recursoNecessario",
+            "relationshipName": "doacao"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "acao",
+            "otherEntityRelationshipName": "recursoNecessario",
+            "relationshipName": "acao",
+            "otherEntityField": "nome"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "campanha",
+            "otherEntityRelationshipName": "recursoNecessario",
+            "relationshipValidateRules": "required",
+            "relationshipName": "campanha",
+            "otherEntityField": "nome"
+        }
+    ],
+    "changelogDate": "20190508041454",
+    "entityTableName": "recurso_necessario",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

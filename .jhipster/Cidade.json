@@ -1,0 +1,45 @@
+{
+    "name": "Cidade",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "latitude",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "longitude",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "endereco",
+            "otherEntityRelationshipName": "cidade",
+            "relationshipName": "endereco"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "estado",
+            "otherEntityRelationshipName": "cidade",
+            "relationshipValidateRules": "required",
+            "relationshipName": "estado",
+            "otherEntityField": "nome"
+        }
+    ],
+    "changelogDate": "20190508041444",
+    "entityTableName": "cidade",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

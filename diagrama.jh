@@ -1,0 +1,165 @@
+entity Estado {
+    nome String required
+    sigla String required
+}
+entity Cidade {
+    nome String required
+    latitude String
+    longitude String  
+}
+ 
+ entity Endereco {
+    logradouro String required
+    numero String required
+    complemento String 
+    bairro String required
+    cep String 
+    latitude String
+    longitude String 
+}
+
+entity Voluntario {
+  	nome   String required   
+    urlFotoPerfil   String 
+    cpf String required
+   	login   String required   
+    senha   String required 
+    isAdmin  Boolean required
+    dataNascimento Instant      
+    dataCadastro   Instant
+    situacao EstadoVoluntarioEnum required
+}
+
+entity Telefone {
+	ddd String
+    numero String
+}
+
+entity Email {
+	email String
+}
+
+entity RedeSocial {
+	tipoRedeSocial TipoRedeSocial
+    url String
+}
+
+entity Habilidade {
+    nome   String required
+    descricao   String required 
+}
+
+entity Profissao {
+    nome   String required
+    descricao   String required 
+}
+
+entity Disponibilidade {
+    horaInicio   Instant required
+    horaFim   Instant required
+   	diaSemana DiaSemanaEnum required
+    turno TurnoEnum required
+}
+
+entity Campanha {
+    nome   String required
+    descricao   String required 
+    slogan   String 
+    dataHoraInicio   Instant required
+    dataHoraFim   Instant required
+}
+
+entity RecursoNecessario {
+    nome   String required
+    descricao   String required 
+    quantidade  Integer  required 
+    isFinanceiro Boolean required
+    valor Double required
+}
+
+
+entity Doacao { 
+    descricao   String required 
+    quantidade  Integer  required 
+    isFinanceiro Boolean required
+    isAnomina Boolean required
+    dataHora   Instant required
+}
+
+entity FormaPagamento { 
+    nome   String required 
+    descricao   Instant  
+}
+
+entity Acao {
+    nome   String required
+    descricao   String required 
+    meta   String 
+    banner   String 
+    dataHoraInicio   Instant required
+    dataHoraFim   Instant required
+    custos Double
+    situacaoAcao SituacaoAcaoEnum required
+}
+
+entity Participacao {
+    dataHoraEmissaoCertificado   Instant  
+    cargaHoraria  Double  
+}
+
+entity ProfissaoNecessariaAcao {
+    quantidadeMinima  Integer  required 
+}
+
+enum EstadoVoluntarioEnum {
+    ATIVO, INATIVO, SUSPENSO
+}
+
+enum SituacaoAcaoEnum {
+    PRE_ACAO, EM_ACAO, SUSPENSA, PAUSADA
+}
+
+
+enum DiaSemanaEnum {
+    SEGUNDA, TERCA, QUARTA, QUINTA, SEXTA, SABADO, DOMINGO
+}
+
+enum TurnoEnum {
+    MANHA, TARDE, NOITE, INTERMEDIARIO
+}
+
+enum TipoRedeSocial {
+    FACEBOOK, TWITER, LINKEDIN, INSTAGRAN, YOUTUBE
+}
+
+
+relationship OneToOne {
+	  Campanha {coordenador(nome) required} to Voluntario   
+      FormaPagamento {Doacao(nome) required} to Doacao 
+}
+
+relationship OneToMany {
+	   Voluntario {disponibilidade} to Disponibilidade{voluntario(nome) required}
+	   Voluntario {doacao} to Doacao{Doador(nome) required}
+       Voluntario{participacao} to Participacao{voluntario(nome) required} 
+       Voluntario{endereco} to Endereco{Voluntario(nome)}            
+       Voluntario{telefone} to Telefone{Voluntario(nome) required} 
+       Voluntario{email} to Email{Voluntario(nome) required} 
+       Voluntario{redeSocial} to RedeSocial{Voluntario(nome) required}                 
+       RecursoNecessario {doacao} to Doacao{RecursoNecessario(nome) required}                       
+       Profissao{ProfissaoNecessariaAcao} to ProfissaoNecessariaAcao {profissao(nome) required}              
+       Estado{cidade} to Cidade{estado(nome) required} 
+       Cidade{endereco} to Endereco{cidade(nome) required}       
+       Acao{ProfissaoNecessariaAcao} to ProfissaoNecessariaAcao{acao(nome) required}
+       Acao{participacao} to Participacao{acao(nome) required}
+       Acao{endereco} to Endereco{Acao(nome)} 
+       Acao{RecursoNecessario} to RecursoNecessario{acao(nome) }
+       Campanha{RecursoNecessario} to RecursoNecessario{Campanha(nome) required}
+}
+
+relationship ManyToMany {  
+  Voluntario{habilidade(nome)} to Habilidade {voluntario(nome)}  
+  Voluntario{profissao(nome)} to Profissao {voluntario(nome)}  
+}
+
+

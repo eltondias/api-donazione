@@ -1,0 +1,28 @@
+{
+    "name": "Email",
+    "fields": [
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "voluntario",
+            "otherEntityRelationshipName": "email",
+            "relationshipValidateRules": "required",
+            "relationshipName": "voluntario",
+            "otherEntityField": "nome"
+        }
+    ],
+    "changelogDate": "20190508041448",
+    "entityTableName": "email",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

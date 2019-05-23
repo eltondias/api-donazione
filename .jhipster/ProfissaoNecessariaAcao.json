@@ -1,0 +1,39 @@
+{
+    "name": "ProfissaoNecessariaAcao",
+    "fields": [
+        {
+            "fieldName": "quantidadeMinima",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "profissao",
+            "otherEntityRelationshipName": "profissaoNecessariaAcao",
+            "relationshipValidateRules": "required",
+            "relationshipName": "profissao",
+            "otherEntityField": "nome"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "acao",
+            "otherEntityRelationshipName": "profissaoNecessariaAcao",
+            "relationshipValidateRules": "required",
+            "relationshipName": "acao",
+            "otherEntityField": "nome"
+        }
+    ],
+    "changelogDate": "20190508041459",
+    "entityTableName": "profissao_necessaria_acao",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

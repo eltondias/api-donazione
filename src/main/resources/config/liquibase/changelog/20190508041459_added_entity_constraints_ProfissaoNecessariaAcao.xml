@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity ProfissaoNecessariaAcao.
+    -->
+    <changeSet id="20190508041459-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="profissao_id"
+                                 baseTableName="profissao_necessaria_acao"
+                                 constraintName="fk_profissao_necessaria_acao_profissao_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="profissao"/>
+
+        <addForeignKeyConstraint baseColumnNames="acao_id"
+                                 baseTableName="profissao_necessaria_acao"
+                                 constraintName="fk_profissao_necessaria_acao_acao_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="acao"/>
+
+    </changeSet>
+</databaseChangeLog>

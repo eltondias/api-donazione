@@ -1,0 +1,33 @@
+{
+    "name": "RedeSocial",
+    "fields": [
+        {
+            "fieldName": "tipoRedeSocial",
+            "fieldType": "TipoRedeSocial",
+            "fieldValues": "FACEBOOK,TWITER,LINKEDIN,INSTAGRAN,YOUTUBE"
+        },
+        {
+            "fieldName": "url",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "voluntario",
+            "otherEntityRelationshipName": "redeSocial",
+            "relationshipValidateRules": "required",
+            "relationshipName": "voluntario",
+            "otherEntityField": "nome"
+        }
+    ],
+    "changelogDate": "20190508041449",
+    "entityTableName": "rede_social",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

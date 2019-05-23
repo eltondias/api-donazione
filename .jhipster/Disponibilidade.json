@@ -1,0 +1,54 @@
+{
+    "name": "Disponibilidade",
+    "fields": [
+        {
+            "fieldName": "horaInicio",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "horaFim",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "diaSemana",
+            "fieldType": "DiaSemanaEnum",
+            "fieldValues": "SEGUNDA,TERCA,QUARTA,QUINTA,SEXTA,SABADO,DOMINGO",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "turno",
+            "fieldType": "TurnoEnum",
+            "fieldValues": "MANHA,TARDE,NOITE,INTERMEDIARIO",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "voluntario",
+            "otherEntityRelationshipName": "disponibilidade",
+            "relationshipValidateRules": "required",
+            "relationshipName": "voluntario",
+            "otherEntityField": "nome"
+        }
+    ],
+    "changelogDate": "20190508041452",
+    "entityTableName": "disponibilidade",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

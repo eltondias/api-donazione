@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Doacao.
+    -->
+    <changeSet id="20190508041455-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="doador_id"
+                                 baseTableName="doacao"
+                                 constraintName="fk_doacao_doador_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="voluntario"/>
+
+        <addForeignKeyConstraint baseColumnNames="recurso_necessario_id"
+                                 baseTableName="doacao"
+                                 constraintName="fk_doacao_recurso_necessario_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="recurso_necessario"/>
+
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,129 @@
+{
+    "name": "Voluntario",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "urlFotoPerfil",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cpf",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "login",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "senha",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "isAdmin",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dataNascimento",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "dataCadastro",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "situacao",
+            "fieldType": "EstadoVoluntarioEnum",
+            "fieldValues": "ATIVO,INATIVO,SUSPENSO",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "disponibilidade",
+            "otherEntityRelationshipName": "voluntario",
+            "relationshipName": "disponibilidade"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "doacao",
+            "otherEntityRelationshipName": "doador",
+            "relationshipName": "doacao"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "participacao",
+            "otherEntityRelationshipName": "voluntario",
+            "relationshipName": "participacao"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "endereco",
+            "otherEntityRelationshipName": "voluntario",
+            "relationshipName": "endereco"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "telefone",
+            "otherEntityRelationshipName": "voluntario",
+            "relationshipName": "telefone"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "email",
+            "otherEntityRelationshipName": "voluntario",
+            "relationshipName": "email"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "redeSocial",
+            "otherEntityRelationshipName": "voluntario",
+            "relationshipName": "redeSocial"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "habilidade",
+            "otherEntityRelationshipName": "voluntario",
+            "relationshipName": "habilidade",
+            "otherEntityField": "nome",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "profissao",
+            "otherEntityRelationshipName": "voluntario",
+            "relationshipName": "profissao",
+            "otherEntityField": "nome",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190508041446",
+    "entityTableName": "voluntario",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,38 @@
+{
+    "name": "Habilidade",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "descricao",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "voluntario",
+            "otherEntityRelationshipName": "habilidade",
+            "relationshipName": "voluntario",
+            "otherEntityField": "nome",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20190508041450",
+    "entityTableName": "habilidade",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

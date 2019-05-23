@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190508041443_added_entity_Estado.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190508041444_added_entity_Cidade.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190508041445_added_entity_Endereco.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190508041446_added_entity_Voluntario.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190508041447_added_entity_Telefone.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190508041448_added_entity_Email.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190508041449_added_entity_RedeSocial.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190508041450_added_entity_Habilidade.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190508041451_added_entity_Profissao.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190508041452_added_entity_Disponibilidade.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190508041453_added_entity_Campanha.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190508041454_added_entity_RecursoNecessario.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190508041455_added_entity_Doacao.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190508041456_added_entity_FormaPagamento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190508041457_added_entity_Acao.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190508041458_added_entity_Participacao.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190508041459_added_entity_ProfissaoNecessariaAcao.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20190508041444_added_entity_constraints_Cidade.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190508041445_added_entity_constraints_Endereco.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190508041446_added_entity_constraints_Voluntario.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190508041447_added_entity_constraints_Telefone.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190508041448_added_entity_constraints_Email.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190508041449_added_entity_constraints_RedeSocial.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190508041452_added_entity_constraints_Disponibilidade.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190508041453_added_entity_constraints_Campanha.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190508041454_added_entity_constraints_RecursoNecessario.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190508041455_added_entity_constraints_Doacao.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190508041456_added_entity_constraints_FormaPagamento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190508041458_added_entity_constraints_Participacao.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190508041459_added_entity_constraints_ProfissaoNecessariaAcao.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+</databaseChangeLog>

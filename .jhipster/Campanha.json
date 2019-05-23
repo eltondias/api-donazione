@@ -1,0 +1,63 @@
+{
+    "name": "Campanha",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "descricao",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "slogan",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dataHoraInicio",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dataHoraFim",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "voluntario",
+            "otherEntityRelationshipName": "campanha",
+            "relationshipValidateRules": "required",
+            "relationshipName": "coordenador",
+            "otherEntityField": "nome",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "recursoNecessario",
+            "otherEntityRelationshipName": "campanha",
+            "relationshipName": "recursoNecessario"
+        }
+    ],
+    "changelogDate": "20190508041453",
+    "entityTableName": "campanha",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

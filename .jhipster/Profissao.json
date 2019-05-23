@@ -1,0 +1,44 @@
+{
+    "name": "Profissao",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "descricao",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "profissaoNecessariaAcao",
+            "otherEntityRelationshipName": "profissao",
+            "relationshipName": "profissaoNecessariaAcao"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "voluntario",
+            "otherEntityRelationshipName": "profissao",
+            "relationshipName": "voluntario",
+            "otherEntityField": "nome",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20190508041451",
+    "entityTableName": "profissao",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

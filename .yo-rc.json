@@ -1,0 +1,39 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "br.com.donazione.api"
+    },
+    "jhipsterVersion": "5.8.2",
+    "applicationType": "monolith",
+    "baseName": "apidonazione",
+    "packageName": "br.com.donazione.api",
+    "packageFolder": "br/com/donazione/api",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "YTdkMzQ2MGM1YTYzOWIzMjQyNzk4MjQwNmQwNTkyOWI5MjEwYjcyNDIyYzU2NjZjYWFmM2MxMDYwYjhhNmJkNTUzNWJmZGM3YjhhOGNiZWUzMThkZjgxMWVmNzk0NDg5ZTI3ZjJlNmUzMTU1NTlhNGEzNzM2NGFhOGE2NDVhY2E=",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [
+      {
+        "name": "generator-jhipster-swagger-cli",
+        "version": "3.0.1"
+      }
+    ],
+    "enableTranslation": false,
+    "clientPackageManager": "npm",
+    "skipClient": true
+  }
+}

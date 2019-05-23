@@ -1,0 +1,40 @@
+{
+    "name": "Participacao",
+    "fields": [
+        {
+            "fieldName": "dataHoraEmissaoCertificado",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "cargaHoraria",
+            "fieldType": "Double"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "voluntario",
+            "otherEntityRelationshipName": "participacao",
+            "relationshipValidateRules": "required",
+            "relationshipName": "voluntario",
+            "otherEntityField": "nome"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "acao",
+            "otherEntityRelationshipName": "participacao",
+            "relationshipValidateRules": "required",
+            "relationshipName": "acao",
+            "otherEntityField": "nome"
+        }
+    ],
+    "changelogDate": "20190508041458",
+    "entityTableName": "participacao",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
