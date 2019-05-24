@@ -27,4 +27,7 @@ public interface VoluntarioRepository extends JpaRepository<Voluntario, Long> {
     @Query("select voluntario from Voluntario voluntario left join fetch voluntario.habilidades left join fetch voluntario.profissaos where voluntario.id =:id")
     Optional<Voluntario> findOneWithEagerRelationships(@Param("id") Long id);
 
+    @Query("select voluntario from Voluntario voluntario where voluntario.login =:login and voluntario.senha =:senha" )
+    Optional<Voluntario>  loginVoluntario(@Param("login") String login,  @Param("senha") String senha);
+
 }

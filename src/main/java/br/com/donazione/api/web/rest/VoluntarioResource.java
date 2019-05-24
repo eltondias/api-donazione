@@ -52,6 +52,24 @@ public class VoluntarioResource {
             .body(result);
     }
 
+
+     /**
+     * POST  /voluntarios : Create a new voluntario.
+     *
+     * @param voluntario the voluntario to create
+     * @return the ResponseEntity with status 201 (Created) and with body the new voluntario, or with status 400 (Bad Request) if the voluntario has already an ID
+     * @throws URISyntaxException if the Location URI syntax is incorrect
+     */
+    @PostMapping("/voluntarios/login")
+    public ResponseEntity<Voluntario> loginVoluntario(@RequestBody Voluntario voluntario) throws URISyntaxException {
+        log.debug("REST request to save Voluntario : {}", voluntario);       
+        Optional<Voluntario> result = voluntarioRepository.loginVoluntario(voluntario.getLogin(), voluntario.getSenha());
+        return ResponseUtil.wrapOrNotFound(result);
+    }
+
+
+
+
     /**
      * PUT  /voluntarios : Updates an existing voluntario.
      *
