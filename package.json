@@ -9,7 +9,7 @@
     ],
     "devDependencies": {
         "generator-jhipster-swagger-cli": "3.0.1",
-        "generator-jhipster": "5.8.2"
+        "generator-jhipster": "6.3.1"
     },
     "engines": {
         "node": ">=8.9.0"
